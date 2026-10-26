@@ -1,0 +1,278 @@
+/* Keimin Studio の共通の見た目。外のフォント・解析のタグは読まない (アプリの「外へ何も送らない」にそろえる) */
+
+@font-face {
+  font-family: "Mochiy Pop One";
+  src: url("fonts/mochiy-subset.woff") format("woff");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Zen Maru Gothic";
+  src: url("fonts/zenmaru-regular-subset.woff") format("woff");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Zen Maru Gothic";
+  src: url("fonts/zenmaru-bold-subset.woff") format("woff");
+  font-weight: 700;
+  font-display: swap;
+}
+
+:root {
+  --bg: #f4fbf3;
+  --surface: #ffffff;
+  --ink: #1b1e4b;
+  --ink-soft: #545a86;
+  --line: #d9e8d7;
+  --mint: #c8efc9;
+  --green: #5bb26a;
+  --green-deep: #2f7d43;
+  --pink: #f37aa8;
+  --yellow: #ffc94a;
+  --radius: 20px;
+  --shadow: 0 4px 0 rgba(27, 30, 75, 0.12);
+  --font-body: "Zen Maru Gothic", "Hiragino Maru Gothic ProN", "Yu Gothic", "Meiryo", sans-serif;
+  --font-head: "Mochiy Pop One", var(--font-body);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #15172f;
+    --surface: #1f2245;
+    --ink: #f1f2ff;
+    --ink-soft: #b9bce6;
+    --line: #34386a;
+    --mint: #233b33;
+    --green: #74c983;
+    --green-deep: #9be0a6;
+    --shadow: 0 4px 0 rgba(0, 0, 0, 0.35);
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #15172f;
+  --surface: #1f2245;
+  --ink: #f1f2ff;
+  --ink-soft: #b9bce6;
+  --line: #34386a;
+  --mint: #233b33;
+  --green: #74c983;
+  --green-deep: #9be0a6;
+  --shadow: 0 4px 0 rgba(0, 0, 0, 0.35);
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.85;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+
+a { color: var(--green-deep); text-underline-offset: 3px; }
+a:hover { text-decoration-thickness: 2px; }
+
+.wrap {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+h1, h2, h3, .brand {
+  font-family: var(--font-head);
+  font-weight: 400;
+  line-height: 1.35;
+  letter-spacing: 0.02em;
+}
+
+/* 上の帯 */
+.site-header {
+  border-bottom: 1px solid var(--line);
+  background: var(--surface);
+}
+.site-header .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 64px;
+}
+.brand {
+  font-size: 20px;
+  color: var(--ink);
+  text-decoration: none;
+}
+.brand .dot { color: var(--pink); }
+.brand, .site-nav a { white-space: nowrap; }
+.site-nav { display: flex; gap: 18px; font-size: 14px; }
+.site-nav a { color: var(--ink-soft); text-decoration: none; }
+.site-nav a:hover { color: var(--ink); }
+
+/* 区切り */
+section { padding: 56px 0; }
+section + section { border-top: 1px solid var(--line); }
+.section-title { font-size: 26px; margin: 0 0 8px; }
+.section-lead { color: var(--ink-soft); margin: 0 0 32px; }
+
+/* スタジオのトップ */
+.studio-hero { padding: 72px 0 56px; }
+.studio-hero h1 { font-size: clamp(34px, 7vw, 56px); margin: 0 0 16px; }
+.studio-hero h1 .dot { color: var(--pink); }
+.studio-hero p { font-size: 18px; max-width: 36em; margin: 0; color: var(--ink-soft); }
+
+.game-card {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 24px;
+  align-items: center;
+  padding: 24px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  color: inherit;
+  text-decoration: none;
+  transition: transform 0.15s ease;
+}
+a.game-card:hover { transform: translateY(-2px); }
+.game-card img { width: 120px; height: 120px; border-radius: 26px; }
+.game-card h3 { font-size: 22px; margin: 0 0 4px; }
+.game-card p { margin: 0; color: var(--ink-soft); }
+.game-card .more { display: inline-block; margin-top: 10px; color: var(--green-deep); font-weight: 700; }
+.game-card.soon {
+  grid-template-columns: 1fr;
+  text-align: center;
+  color: var(--ink-soft);
+  border-style: dashed;
+  box-shadow: none;
+}
+.game-list { display: grid; gap: 20px; }
+
+/* ゲームのページ: 上の大きな絵 */
+.game-hero {
+  background: linear-gradient(180deg, var(--mint), var(--bg));
+  padding: 40px 0 48px;
+}
+.game-hero .wrap {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 32px;
+  align-items: center;
+}
+.game-hero h1 { font-size: clamp(34px, 6vw, 52px); margin: 0 0 6px; }
+.game-hero .catch { font-family: var(--font-head); font-size: 18px; margin: 0 0 16px; }
+.game-hero .summary { margin: 0 0 24px; color: var(--ink-soft); }
+.game-hero .hero-art { border-radius: var(--radius); box-shadow: var(--shadow); }
+
+.store-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 22px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.25);
+}
+:root[data-theme="dark"] .store-button { background: var(--green); color: #10122a; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .store-button { background: var(--green); color: #10122a; }
+}
+.store-button[aria-disabled="true"] { opacity: 0.55; cursor: default; }
+.store-note { display: block; font-size: 13px; color: var(--ink-soft); margin-top: 10px; }
+
+/* 遊びの紹介 */
+.feature {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 32px;
+  align-items: center;
+  margin-bottom: 48px;
+}
+.feature:last-child { margin-bottom: 0; }
+.feature.flip .feature-text { order: 2; }
+.feature-text h3 { font-size: 22px; margin: 0 0 8px; }
+.tag {
+  display: inline-block;
+  font-size: 13px;
+  padding: 2px 10px;
+  margin-right: 8px;
+  border-radius: 999px;
+  background: var(--yellow);
+  color: #1b1e4b;
+  vertical-align: 3px;
+}
+.feature-text p { margin: 0; }
+.feature-text.solo { margin-bottom: 48px; max-width: 44em; }
+.feature img { border-radius: 14px; border: 1px solid var(--line); box-shadow: var(--shadow); }
+
+/* 保護者の方へ */
+.promise-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  padding: 0;
+  margin: 0 0 24px;
+  list-style: none;
+}
+.promise-list li {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+}
+.promise-list strong { display: block; font-family: var(--font-head); font-weight: 400; font-size: 17px; margin-bottom: 4px; }
+.promise-list span { color: var(--ink-soft); font-size: 15px; }
+
+.spec { width: 100%; border-collapse: collapse; background: var(--surface); border-radius: var(--radius); overflow: hidden; }
+.spec th, .spec td { text-align: left; padding: 12px 16px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.spec tr:last-child th, .spec tr:last-child td { border-bottom: none; }
+.spec th { width: 9em; font-weight: 700; white-space: nowrap; }
+
+/* よくある質問 */
+.faq details {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 0 20px;
+  margin-bottom: 12px;
+}
+.faq summary { cursor: pointer; padding: 16px 0; font-weight: 700; list-style: none; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::before { content: "Q. "; color: var(--pink); }
+.faq details[open] summary { border-bottom: 1px dashed var(--line); }
+.faq details p { margin: 14px 0 18px; }
+
+.contact-box {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 24px;
+}
+.contact-box .mail { font-size: 18px; font-weight: 700; word-break: break-all; }
+
+/* 下の帯 */
+.site-footer { padding: 32px 0 48px; color: var(--ink-soft); font-size: 14px; border-top: 1px solid var(--line); }
+.site-footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; }
+.site-footer a { color: var(--ink-soft); }
+
+@media (max-width: 720px) {
+  section { padding: 40px 0; }
+  .game-hero .wrap,
+  .feature { grid-template-columns: 1fr; gap: 16px; }
+  .feature.flip .feature-text { order: 0; }
+  .game-card { grid-template-columns: 80px 1fr; gap: 16px; padding: 18px; }
+  .game-card img { width: 80px; height: 80px; border-radius: 18px; }
+  .brand { font-size: 17px; }
+  .site-nav { gap: 10px; font-size: 12px; }
+  .spec th { width: auto; white-space: normal; }
+}

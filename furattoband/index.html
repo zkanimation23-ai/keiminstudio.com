@@ -5,10 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ふらっと音楽隊 | Keimin Studio</title>
 <meta name="description" content="パートを1つずつ録音して重ねると、ひとりでも合奏に。ドレミつきの楽譜と光る鍵盤で、楽譜が読めなくても練習できる子ども向けの音楽アプリ。広告なし・データの収集なし。">
+<meta name="theme-color" content="#fbf4e4">
 <link rel="icon" href="img/favicon.png">
 <link rel="stylesheet" href="../assets/style.css">
 </head>
-<body>
+<body class="game">
+<a class="skip" href="#play">本文へ</a>
 
 <header class="site-header">
   <div class="wrap">
@@ -22,134 +24,205 @@
 </header>
 
 <main>
+  <!-- PC 幅だけ 左に出る ページ内の目次 (スマホは 上の帯) -->
+  <aside class="toc sketch" aria-label="目次">
+    <p class="toc-title">もくじ</p>
+    <ol>
+      <li><a href="#play">あそび</a>
+        <ol>
+          <li><a href="#ensemble">がっそう</a></li>
+          <li><a href="#practice">れんしゅう</a></li>
+          <li><a href="#okeiko">おけいこ</a></li>
+          <li><a href="#compose">さっきょく</a></li>
+          <li><a href="#buddy">あいぼう</a></li>
+          <li><a href="#plaza">ひろば</a></li>
+        </ol>
+      </li>
+      <li><a href="#songs">収録曲と楽器</a></li>
+      <li><a href="#parents">保護者の方へ</a></li>
+      <li><a href="#support">サポート</a></li>
+    </ol>
+    <img src="img/buddy_hamster.webp" alt="" width="414" height="448" loading="lazy">
+  </aside>
   <section class="game-hero">
     <div class="wrap">
-      <div>
-        <h1>ふらっと音楽隊</h1>
-        <p class="catch">ひとりで録音、重ねて合奏。</p>
-        <p class="summary">メロディ・コード・ベース・リズム・うた。パートを1つずつ録音して重ねていくと、自分だけのバンドの演奏ができあがります。ドレミつきの楽譜と光る鍵盤で、楽譜が読めなくても大丈夫。</p>
+      <h1>ふらっと音楽隊</h1>
+      <p class="catch">ひとりで録音、<wbr>重ねて合奏。</p>
+      <p class="summary">メロディ・コード・ベース・リズム・うた。パートを1つずつ録音して重ねていくと、自分だけのバンドの演奏ができあがります。ドレミつきの楽譜と光る鍵盤で、楽譜が読めなくても大丈夫。</p>
+      <div class="hero-band">
+        <span class="float-note n1" aria-hidden="true">♪</span>
+        <span class="float-note n2" aria-hidden="true">♪</span>
+        <span class="float-note n3" aria-hidden="true">♪</span>
+        <img src="img/band.webp" alt="ベース・鍵盤・ギター・マイク・たいこを持った5ひきの あいぼう" width="1683" height="624">
+      </div>
+      <div class="store-row">
         <!-- 公開したら aria-disabled を外し、href を
              https://play.google.com/store/apps/details?id=com.keiyamazaki.furattoband にする -->
         <a class="store-button" aria-disabled="true">Google Play で近日公開</a>
         <span class="store-note">Android 7.1 以上 ・ iOS 版は準備中</span>
       </div>
-      <img class="hero-art" src="img/hero.webp" alt="ギターを弾いて歌う いぬ の あいぼう と、ふらっと音楽隊のロゴ" width="1024" height="500">
     </div>
   </section>
+
+  <div class="squiggle" aria-hidden="true"></div>
 
   <section id="play">
     <div class="wrap">
-      <h2 class="section-title">あそび</h2>
-      <p class="section-lead">合奏・練習・おけいこ・作曲。好きなところから始められます。</p>
+      <h2 class="section-title"><span class="kicker">PLAY</span>あそび</h2>
+      <p class="section-lead">合奏・練習・おけいこ・作曲。<wbr>好きなところから始められます。</p>
 
-      <!-- 合奏の録音画面のスクショができたら、ほかと同じ2列にする -->
-      <div class="feature-text solo">
-        <h3><span class="tag">がっそう</span>ひとりで合奏をつくろう</h3>
-        <p>曲を選んで、パートごとに楽器を決めて録音。録ったパートは伴奏として流れるので、次のパートはそれに合わせて弾くだけです。ピアノ・木琴・リコーダー・ギター・ドラムなど50種類以上の楽器と、マイクで録る うたのパートがあります。</p>
+      <div id="ensemble" class="ensemble sketch">
+        <span class="tag">がっそう</span>
+        <h3>ひとりで<wbr>合奏をつくろう</h3>
+        <p>曲を選んで、パートごとに楽器を決めて録音。録ったパートは伴奏として流れるので、次のパートはそれに合わせて弾くだけです。ピアノ・木琴・リコーダー・ギター・ドラムなど50種類以上の楽器と、マイクで録る「うた」のパートがあります。</p>
+        <ol class="steps">
+          <li class="step"><img src="img/buddy_dog_guitar.webp" alt="" width="477" height="439" loading="lazy"><b>メロディ</b><span>まずは<wbr>主旋律を録音</span></li>
+          <li class="step"><img src="img/buddy_cat_keyboard.webp" alt="" width="414" height="471" loading="lazy"><b>コード</b><span>和音で<wbr>ひびきを足す</span></li>
+          <li class="step"><img src="img/buddy_panda_bass.webp" alt="" width="471" height="593" loading="lazy"><b>ベース</b><span>メロディを<wbr>聴きながら</span></li>
+          <li class="step"><img src="img/buddy_bear_drum.webp" alt="" width="414" height="475" loading="lazy"><b>リズム</b><span>たいこで<wbr>ノリをつける</span></li>
+          <li class="step"><img src="img/buddy_rabbit_mic.webp" alt="" width="414" height="544" loading="lazy"><b>うた</b><span>マイクで<wbr>歌声を重ねる</span></li>
+        </ol>
+        <p class="result keep">重ねると、<wbr><em>ひとりで<wbr>バンドの演奏</em>に！</p>
       </div>
 
-      <div class="feature">
+      <div id="practice" class="feature">
         <div class="feature-text">
-          <h3><span class="tag">れんしゅう</span>楽譜が読めなくても</h3>
+          <span class="tag t-sky">れんしゅう</span>
+          <h3>楽譜が<wbr>読めなくても</h3>
           <p>音符にドレミの名前がつく楽譜と、次に弾く鍵盤が光る表示。好きな小節を選んで、お手本を聴く → なぞる → いっしょに弾く、の順で少しずつ練習できます。速さも変えられます。</p>
         </div>
-        <img src="img/01_practice.webp" alt="ドレミつきの楽譜と鍵盤で弾く れんしゅう の画面" width="1280" height="720" loading="lazy">
+        <figure class="photo">
+          <img src="img/01_practice.webp" alt="ドレミつきの楽譜と鍵盤で弾く れんしゅう の画面" width="1280" height="720" loading="lazy">
+          <figcaption>ドレミつきの楽譜と光る鍵盤</figcaption>
+          <img class="peek" src="img/buddy_chick_recorder.webp" alt="" width="414" height="507" loading="lazy">
+        </figure>
       </div>
 
-      <div class="feature flip">
+      <div id="okeiko" class="feature flip">
         <div class="feature-text">
-          <h3><span class="tag">おけいこ</span>やさしい順にステップアップ</h3>
+          <span class="tag t-mint">おけいこ</span>
+          <h3>やさしい順に<wbr>ステップアップ</h3>
           <p>1本の指で弾くコースから、両手で弾くコースへ。新しい音符やコードを1つずつ覚えながら、短い練習曲から仕上げの曲へ進みます。相棒のお手本をまねする「ききまね」で、耳と手をいっしょに育てます。</p>
         </div>
-        <img src="img/02_okeiko.webp" alt="おけいこ のレッスンの画面" width="1280" height="720" loading="lazy">
+        <figure class="photo tape-2">
+          <img src="img/02_okeiko.webp" alt="おけいこ のレッスンの画面" width="1280" height="720" loading="lazy">
+          <figcaption>レッスンを1つずつ</figcaption>
+          <img class="peek" src="img/buddy_fox_xylophone.webp" alt="" width="414" height="519" loading="lazy">
+        </figure>
       </div>
 
-      <div class="feature">
+      <div id="compose" class="feature">
         <div class="feature-text">
-          <h3><span class="tag">さっきょく</span>自分だけの曲をつくろう</h3>
+          <span class="tag t-pink">さっきょく</span>
+          <h3>自分だけの<wbr>曲をつくろう</h3>
           <p>シートに音を並べるだけで作曲できます。コードは自動でつけることもできます。作った曲は合奏や練習でも使えます。</p>
         </div>
-        <img src="img/03_compose.webp" alt="音を並べて曲を作る さっきょく の画面" width="1280" height="720" loading="lazy">
+        <figure class="photo tape-3">
+          <img src="img/03_compose.webp" alt="音を並べて曲を作る さっきょく の画面" width="1280" height="720" loading="lazy">
+          <figcaption>音を並べて作曲</figcaption>
+          <img class="peek" src="img/buddy_hamster.webp" alt="" width="414" height="448" loading="lazy">
+        </figure>
       </div>
 
-      <div class="feature flip">
+      <div id="buddy" class="feature flip">
         <div class="feature-text">
-          <h3><span class="tag">あいぼう</span>なかよしの相棒といっしょ</h3>
+          <span class="tag t-lilac">あいぼう</span>
+          <h3>なかよしの<wbr>相棒といっしょ</h3>
           <p>いっしょに遊ぶ動物の「あいぼう」と出会えます。服や飾りを着せかえたり、自分のアバターをパーツを組み合わせて作ったりできます。</p>
         </div>
-        <img src="img/04_buddy.webp" alt="いっしょに遊ぶ あいぼう を選ぶ画面" width="1280" height="720" loading="lazy">
+        <figure class="photo">
+          <img src="img/04_buddy.webp" alt="いっしょに遊ぶ あいぼう を選ぶ画面" width="1280" height="720" loading="lazy">
+          <figcaption>3びきの中から<wbr>1ぴきを選んで</figcaption>
+          <img class="peek" src="img/buddy_shiba.webp" alt="" width="414" height="471" loading="lazy">
+        </figure>
       </div>
 
-      <div class="feature">
+      <div id="plaza" class="feature">
         <div class="feature-text">
-          <h3><span class="tag">ひろば</span>あいぼうたちの庭を飾ろう</h3>
+          <span class="tag t-mint">ひろば</span>
+          <h3>あいぼうたちの<wbr>庭を飾ろう</h3>
           <p>あいぼうたちが暮らす「ひろば」に、木や家、楽器を置いて飾れます。押すと鳴る物や、ミニコンサートを開けるステージもあります。</p>
         </div>
-        <img src="img/05_plaza.webp" alt="あいぼうたちが暮らす ひろば の画面" width="1280" height="720" loading="lazy">
+        <figure class="photo tape-2">
+          <img src="img/05_plaza.webp" alt="あいぼうたちが暮らす ひろば の画面" width="1280" height="720" loading="lazy">
+          <figcaption>木や家や楽器を置いて</figcaption>
+        </figure>
       </div>
     </div>
   </section>
+
+  <div class="squiggle" aria-hidden="true"></div>
 
   <section id="songs">
     <div class="wrap">
-      <h2 class="section-title">収録曲と楽器</h2>
-      <table class="spec">
-        <tr><th>収録曲</th><td>きらきらぼし、ジングルベル、ふるさと、トルコ行進曲、カノンなど、著作権の切れた童謡・唱歌・クラシック・世界の民謡を80曲</td></tr>
-        <tr><th>楽器</th><td>50種類以上。ねこ や いぬ の声など、おもしろい音もあります</td></tr>
-        <tr><th>鍵盤</th><td>画面の鍵盤のほか、つないだ電子ピアノ・MIDI キーボードでも弾けます</td></tr>
-        <tr><th>対象年齢のめやす</th><td>6〜12歳</td></tr>
-      </table>
+      <h2 class="section-title"><span class="kicker">SONGS</span>収録曲と楽器</h2>
+      <p class="section-lead">きらきらぼし、ジングルベル、ふるさと、<wbr>トルコ行進曲、カノンなど。</p>
+      <div class="facts">
+        <div class="fact sketch"><span class="num">80<small>曲</small></span><span class="label">収録曲</span><span class="note">著作権の切れた童謡・唱歌・<wbr>クラシック・世界の民謡</span></div>
+        <div class="fact sketch"><span class="num">50<small>種類以上</small></span><span class="label">楽器</span><span class="note">ねこ や いぬ の声など、<wbr>おもしろい音も</span></div>
+        <div class="fact sketch"><span class="num">MIDI</span><span class="label">鍵盤</span><span class="note">画面の鍵盤のほか、<wbr>電子ピアノでも</span></div>
+        <div class="fact sketch"><span class="num">6〜12<small>歳</small></span><span class="label">対象年齢のめやす</span><span class="note">ひらがな・漢字・<wbr>英語で表示</span></div>
+      </div>
     </div>
   </section>
 
+  <div class="squiggle" aria-hidden="true"></div>
+
   <section id="parents">
     <div class="wrap">
-      <h2 class="section-title">保護者の方へ</h2>
-      <p class="section-lead">お子さまに安心して渡せるよう、次のことを約束しています。</p>
+      <h2 class="section-title"><span class="kicker">FOR PARENTS</span>保護者の方へ</h2>
+      <p class="section-lead">お子さまに安心して渡せるよう、<wbr>次のことを約束しています。</p>
       <ul class="promise-list">
         <li><strong>広告なし</strong><span>アプリの中に広告は出ません。</span></li>
-        <li><strong>データの収集なし</strong><span>録音した声・作った曲・読み取りに使った写真は端末の中だけで扱い、外部へ送りません。</span></li>
-        <li><strong>登録・ログイン不要</strong><span>アカウントを作らずに遊べます。</span></li>
-        <li><strong>買い切り1回だけ</strong><span>無料で一部を遊べます。すべて遊ぶには1回だけの購入が必要で、購入の前に保護者の確認があります。</span></li>
-        <li><strong>コインはお金で買えない</strong><span>アプリの中のコインは遊んでもらえるもので、見た目のアイテムとだけ交換できます。</span></li>
+        <li><strong>データの<wbr>収集なし</strong><span>録音した声・作った曲・読み取りに使った写真は端末の中だけで扱い、外部へ送りません。</span></li>
+        <li><strong>登録・<wbr>ログイン不要</strong><span>アカウントを作らずに遊べます。</span></li>
+        <li><strong>買い切り<wbr>1回だけ</strong><span>無料で一部を遊べます。すべて遊ぶには1回だけの購入が必要で、購入の前に保護者の確認があります。</span></li>
+        <li><strong>コインは<wbr>お金で買えない</strong><span>アプリの中のコインは遊んでもらえるもので、見た目のアイテムとだけ交換できます。</span></li>
       </ul>
       <table class="spec">
         <tr><th>無料で遊べる</th><td>一部の曲と楽器、おけいこ の「いっぽんゆび」のすべてと「りょうて」の最初の4レッスン、作った曲の保存2曲まで、合奏の保存3つまで</td></tr>
         <tr><th>購入すると</th><td>すべての曲・楽器・レッスンを遊べます (アプリ内課金・買い切り)</td></tr>
       </table>
-      <p style="margin-top:20px"><a href="https://zkanimation23-ai.github.io/furattoband-privacy/">プライバシーポリシー</a></p>
+      <p class="parents-foot"><a href="https://zkanimation23-ai.github.io/furattoband-privacy/">プライバシーポリシー</a></p>
     </div>
   </section>
 
+  <div class="squiggle" aria-hidden="true"></div>
+
   <section id="support" class="faq">
     <div class="wrap">
-      <h2 class="section-title">サポート</h2>
+      <h2 class="section-title"><span class="kicker">SUPPORT</span>サポート</h2>
       <p class="section-lead">よくある質問</p>
 
-      <details>
-        <summary>機種変更や入れ直しのあと、購入した内容を戻すには？</summary>
-        <p>購入したときと同じ Google アカウントでアプリを入れ、「せってい」の「アプリ」から「ぜんぶ あそべる ばんに する」を押し、保護者の確認のあとに「購入を復元する」を押してください。</p>
-      </details>
+      <div class="faq-list">
+        <details>
+          <summary>機種変更や入れ直しのあと、<wbr>購入した内容を戻すには？</summary>
+          <p>購入したときと同じ Google アカウントでアプリを入れ、「せってい」の「アプリ」から「ぜんぶ あそべる ばんに する」を押し、保護者の確認のあとに「購入を復元する」を押してください。</p>
+        </details>
 
-      <details>
-        <summary>作った曲や録音は、ほかの端末に移せますか？</summary>
-        <p>作った曲・録音・あいぼう などは端末の中だけに保存しているため、いまはほかの端末へ移す機能はありません。アプリを削除すると消えてしまうのでご注意ください。</p>
-      </details>
+        <details>
+          <summary>作った曲や録音は、<wbr>ほかの端末に移せますか？</summary>
+          <p>作った曲・録音・あいぼう などは端末の中だけに保存しているため、いまはほかの端末へ移す機能はありません。アプリを削除すると消えてしまうのでご注意ください。</p>
+        </details>
 
-      <details>
-        <summary>電子ピアノや MIDI キーボードはつなげますか？</summary>
-        <p>USB でつないだ MIDI キーボード・電子ピアノで弾けます。端末によっては変換アダプターが必要です。</p>
-      </details>
+        <details>
+          <summary>電子ピアノや MIDI キーボードは<wbr>つなげますか？</summary>
+          <p>USB でつないだ MIDI キーボード・電子ピアノで弾けます。端末によっては変換アダプターが必要です。</p>
+        </details>
 
-      <details>
-        <summary>うたのパートでマイクを使うのはなぜですか？</summary>
-        <p>うたのパートで歌声を録音するためです。録音した声は端末の中だけに保存され、外部へ送られることはありません。マイクを許可しなくても、うた以外のあそびはすべて使えます。</p>
-      </details>
+        <details>
+          <summary>うたのパートで<wbr>マイクを使うのはなぜですか？</summary>
+          <p>うたのパートで歌声を録音するためです。録音した声は端末の中だけに保存され、外部へ送られることはありません。マイクを許可しなくても、うた以外のあそびはすべて使えます。</p>
+        </details>
+      </div>
 
-      <h3 style="margin:40px 0 12px;font-size:20px">お問い合わせ</h3>
-      <div class="contact-box">
-        <p style="margin:0 0 8px">ご質問・不具合のご報告は、こちらのメールまでお寄せください。お使いの端末の機種名と、どの画面で何が起きたかを書いていただけると助かります。</p>
-        <span class="mail">furattoband.support@gmail.com</span>
+      <div class="support-contact contact-box sketch">
+        <img src="img/buddy_rabbit_mic.webp" alt="" width="414" height="544" loading="lazy">
+        <div>
+          <h3>お問い合わせ</h3>
+          <p>ご質問・不具合のご報告は、こちらのメールまでお寄せください。お使いの端末の機種名と、どの画面で何が起きたかを書いていただけると助かります。</p>
+          <span class="mail">furattoband.support@gmail.com</span>
+        </div>
       </div>
     </div>
   </section>
@@ -162,5 +235,33 @@
   </div>
 </footer>
 
+<script>
+// 目次: いま読んでいる所に印を付ける (外へは何も送らない)
+(function () {
+  var links = document.querySelectorAll('.toc a');
+  var targets = [];
+  links.forEach(function (a) {
+    var t = document.querySelector(a.getAttribute('href'));
+    if (t) targets.push({ a: a, t: t });
+  });
+  function update() {
+    var y = window.innerHeight * 0.35;
+    var current = null;
+    targets.forEach(function (x) { if (x.t.getBoundingClientRect().top <= y) current = x; });
+    // いちばん下まで来たら さいごの項目 (サポート) は 上まで上がりきらない
+    if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) current = targets[targets.length - 1];
+    links.forEach(function (a) { a.classList.remove('is-current'); a.removeAttribute('aria-current'); });
+    if (!current) return;
+    current.a.classList.add('is-current');
+    current.a.setAttribute('aria-current', 'true');
+    // 子の項目にいるときは 親 (あそび) にも印
+    var parent = current.a.closest('ol ol');
+    if (parent) parent.parentElement.firstElementChild.classList.add('is-current');
+  }
+  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+})();
+</script>
 </body>
 </html>

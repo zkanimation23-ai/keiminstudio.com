@@ -5,10 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Keimin Studio</title>
 <meta name="description" content="Keimin Studio は、子どもが音楽やものづくりを楽しめるアプリを作っている個人のスタジオです。">
+<meta name="theme-color" content="#fbf4e4">
 <link rel="icon" href="furattoband/img/favicon.png">
 <link rel="stylesheet" href="assets/style.css">
 </head>
-<body>
+<body class="studio">
+<a class="skip" href="#games">本文へ</a>
 
 <header class="site-header">
   <div class="wrap">
@@ -24,18 +26,26 @@
 <main>
   <section class="studio-hero">
     <div class="wrap">
-      <h1>Keimin Studio<span class="dot">.</span></h1>
-      <p>子どもが音楽やものづくりを、ひとりでも楽しめるアプリを作っています。広告を出さず、データを集めず、安心して渡せるものを。</p>
+      <h1>Keimin<br>Studio<span class="dot">.</span></h1>
+      <p class="lead">子どもが音楽やものづくりを、<wbr>ひとりでも楽しめるアプリを<wbr>作っています。</p>
+      <p class="sub">広告を出さず、データを集めず、安心して渡せるものを。</p>
+      <ul class="values">
+        <li>広告なし</li>
+        <li>データの収集なし</li>
+        <li>ランダムで引く課金なし</li>
+      </ul>
     </div>
   </section>
 
+  <div class="squiggle" aria-hidden="true"></div>
+
   <section id="games">
     <div class="wrap">
-      <h2 class="section-title">ゲーム</h2>
-      <p class="section-lead">これまでに作ったもの・いま作っているもの</p>
+      <h2 class="section-title"><span class="kicker">GAMES</span>ゲーム</h2>
+      <p class="section-lead">これまでに作ったもの・<wbr>いま作っているもの</p>
       <div class="game-list">
-        <a class="game-card" href="furattoband/">
-          <img src="assets/furattoband_icon.webp" alt="ふらっと音楽隊のアイコン" width="120" height="120">
+        <a class="game-card sketch" href="furattoband/">
+          <div class="cover"><img src="furattoband/img/hero.webp" alt="ギターを弾いて歌う いぬ の あいぼう と、ふらっと音楽隊のロゴ" width="1024" height="500"></div>
           <div>
             <h3>ふらっと音楽隊</h3>
             <p>パートを1つずつ録音して重ねると、ひとりでも合奏に。ピアノと楽譜に楽しく親しめる、子ども向けの音楽アプリです。</p>
@@ -49,10 +59,12 @@
     </div>
   </section>
 
+  <div class="squiggle" aria-hidden="true"></div>
+
   <section id="about">
     <div class="wrap">
-      <h2 class="section-title">Keimin Studio について</h2>
-      <p class="section-lead">Kei Yamazaki がひとりで運営している、個人のアプリ制作スタジオです。</p>
+      <h2 class="section-title"><span class="kicker">ABOUT</span>Keimin Studio について</h2>
+      <p class="section-lead">Kei Yamazaki がひとりで運営している、<wbr>個人のアプリ制作スタジオです。</p>
       <table class="spec">
         <tr><th>名前</th><td>Keimin Studio</td></tr>
         <tr><th>運営者</th><td>Kei Yamazaki</td></tr>
@@ -62,11 +74,13 @@
     </div>
   </section>
 
+  <div class="squiggle" aria-hidden="true"></div>
+
   <section id="contact">
     <div class="wrap">
-      <h2 class="section-title">お問い合わせ</h2>
-      <p class="section-lead">アプリについてのご質問・不具合のご報告は、メールでお寄せください。</p>
-      <div class="contact-box">
+      <h2 class="section-title"><span class="kicker">CONTACT</span>お問い合わせ</h2>
+      <p class="section-lead">アプリについてのご質問・不具合のご報告は、<wbr>メールでお寄せください。</p>
+      <div class="contact-box sketch">
         <!-- スタジオ用のアドレスを作ったら差しかえる。いまは ふらっと音楽隊 のサポートのアドレス -->
         <span class="mail">furattoband.support@gmail.com</span>
       </div>

@@ -469,6 +469,43 @@ a.game-card:hover { transform: translateY(-3px) rotate(-0.3deg); }
 }
 .photo.tape-2::before { background: var(--tape-2); transform: translateX(-50%) rotate(4deg); }
 .photo.tape-3::before { background: var(--tape-3); }
+/* 説明動画: ページの中に YouTube を読みこまず、絵から YouTube へ飛ぶ (外から何も読まない) */
+.video-link {
+  display: block;
+  max-width: 600px;
+  margin: 40px auto 0;
+  color: inherit;
+  text-decoration: none;
+}
+.video-link .photo { transform: rotate(-1.2deg); transition: transform 0.2s; }
+.video-link:hover .photo,
+.video-link:focus-visible .photo { transform: rotate(0deg) scale(1.02); }
+.video-link:focus-visible { outline: 3px solid var(--pen); outline-offset: 6px; border-radius: 6px; }
+.video-frame { position: relative; display: block; }
+.video-frame img { display: block; width: 100%; height: auto; }
+.video-frame::after {
+  /* ▶ の印 (赤い丸に白い三角) */
+  content: "";
+  position: absolute;
+  left: 50%; top: 50%;
+  width: 76px; height: 76px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: #e8455f;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+.video-frame::before {
+  content: "";
+  position: absolute;
+  left: 50%; top: 50%;
+  z-index: 1;
+  width: 0; height: 0;
+  transform: translate(-35%, -50%);
+  border-style: solid;
+  border-width: 15px 0 15px 26px;
+  border-color: transparent transparent transparent #fff;
+}
+
 /* 写真の すみから のぞく あいぼう */
 .peek {
   position: absolute;
